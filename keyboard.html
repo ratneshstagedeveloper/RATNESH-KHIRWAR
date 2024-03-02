@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+<style>
+    .background {
+        background-color: rgb(54, 54, 54);
+        height: 3%;
+        width: 1020px;
+        display: inline-block;
+        padding: 5px;
+        border-radius: 10px;
+
+    }
+
+    .button- {
+        display: inline-block;
+        height: 40px;
+        width: 59px;
+        background-color: aqua;
+        margin: 5px;
+        border-radius: 20px;
+
+
+    }
+
+    .keyboard {
+        background-color: rgb(41, 41, 41);
+        height: 40px;
+        width: 59px;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+    }
+
+    body {
+        background: #060c21;
+        font-family: 'poppins', sans-serif;
+    }
+
+    .box {
+        position: relative;
+        background: #060c21;
+    }
+
+    .box:before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: #fff;
+        z-index: -1;
+    }
+
+    .box:after {
+        content: '';
+        position: absolute;
+        top: -6px;
+        left: -6px;
+        right: -6px;
+        bottom: -6px;
+        background: #fff;
+        z-index: -2;
+        filter: blur(50px);
+    }
+
+    .box:before,
+    .box:after {
+        background: linear-gradient(200deg, #89ff00, #000000, hsl(194, 100%, 37%));
+    }
+
+    .content {
+        box-sizing: border-box;
+        color: #fff;
+    }
+
+    button:hover {
+        background-color: rgb(158, 158, 158);
+    }
+
+    button:active {
+        background-color: rgb(218, 218, 218);
+    }
+    #display{
+   padding-top: 80px;
+   padding-right: 50px;
+    }
+</style>
+<script>
+    let displayString = "";
+    let total = 0;
+    let action = 0;
+    function numbertype(passnumber) {
+        displayString = displayString + passnumber.toString();
+        document.getElementById("display").innerHTML = displayString;
+    }
+    function Backspace() {
+        total=0;
+        displayString=displayString.substring(0, displayString .length -1);
+        document.getElementById("display").innerHTML = displayString;
+    }
+</script>
+
+<body style="
+    background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 200px;
+     ">
+
+
+    <!-- first row -->
+    <main class="background box" style="width: 1030px;">
+
+        <h1 id="display"
+            style="background-color: blueviolet;height: 100px;width: 98 0px;border-radius: 40px;text-align: right; color: white;">
+        </h1>
+        <div class="first-row content">
+
+            <div class="button-"><button class="keyboard" style="color: cornflowerblue;"
+                    onclick="numbertype('`')">`</button></div>
+            <div class="button-"><button class="keyboard" style="background-color:rgb(95, 43, 226)"
+                    onclick="numbertype('1')">1</button></div>
+            <div class="button-"><button class="keyboard" style="background-color:rgb(95, 43, 226)"
+                    onclick="numbertype('2')">2</button></div>
+            <div class="button-"><button class="keyboard" style="background-color:rgb(95, 43, 226)"
+                    onclick="numbertype('3')">3</button></div>
+            <div class="button-"><button class="keyboard" style="background-color:rgb(95, 43, 226)"
+                    onclick="numbertype('4')">4</button></div>
+            <div class="button-"><button class="keyboard" style="background-color:rgb(95, 43, 226)"
+                    onclick="numbertype('5')">5</button></div>
+            <div class="button-"><button class="keyboard" style="background-color:rgb(95, 43, 226)"
+                    onclick="numbertype('6')">6</button></div>
+            <div class="button-"><button class="keyboard" style="background-color:rgb(95, 43, 226)"
+                    onclick="numbertype('7')">7</button></div>
+            <div class="button-"><button class="keyboard" style="background-color:rgb(95, 43, 226)"
+                    onclick="numbertype('8')">8</button></div>
+            <div class="button-"><button class="keyboard" style="background-color:rgb(95, 43, 226)"
+                    onclick="numbertype('9')">9</button></div>
+            <div class="button-"><button class="keyboard" style="background-color:rgb(95, 43, 226);"
+                    onclick="numbertype('0')">0</button></div>
+            <div class="button-"><button class="keyboard" style="color: cornflowerblue;"
+                    onclick="numbertype('-')">-</button></div>
+            <div class="button-"><button class="keyboard" style="color: cornflowerblue;width: 130px;"
+                    onclick="Backspace('')">Backspace</button></div>
+
+        </div>
+        <div class="first-row">
+
+            <div class="button-"><button class="keyboard" style="color: yellowgreen;" onclick="typing()">tab</button>
+            </div>
+            <div class="button-"><button class="keyboard" onclick="numbertype('q')">q</button></div>
+            <div class="button-"><button class="keyboard" onclick="numbertype('w')">w</button></div>
+            <div class="button-"><button class="keyboard" onclick="numbertype('e')">e</button></div>
+            <div class="button-"><button class="keyboard" onclick="numbertype('r')">r</button></div>
+            <div class="button-"><button class="keyboard" onclick="numbertype('t')">t</button></div>
+            <div class="button-"><button class="keyboard" onclick="numbertype('y')">y</button></div>
+            <div class="button-"><button class="keyboard" onclick="numbertype('u')">u</button></div>
+            <div class="button-"><button class="keyboard" onclick="numbertype('i')">i</button></div>
+            <div class="button-"><button class="keyboard" onclick="numbertype('o')">o</button></div>
+            <div class="button-"><button class="keyboard" onclick="numbertype('p')">p</button></div>
+            <div class="button-"><button class="keyboard" style="color: cornflowerblue;" onclick="numbertype('[')">[</button>
+            </div>
+            <div class="button-"><button class="keyboard" style="color: cornflowerblue;" onclick="numbertype(']')">]</button>
+            </div>
+            <div class="button-"><button class="keyboard" style="color: cornflowerblue;" onclick="numbertype('/')">\</button>
+            </div>
+
+        </div>
+        <div class="first-row">
+            <div class="button-"><button class="keyboard" style="color: yellowgreen;" onclick="typing()">Caps</button>
+            </div>
+            <div class="button-"><button class="keyboard" onclick="numbertype('a')">a</button></div>
+            <div class="button-"><button class="keyboard" onclick="numbertype('s')">s</button></div>
+            <div class="button-"><button class="keyboard" onclick="numbertype('d')">d</button></div>
+            <div class="button-"><button class="keyboard" onclick="numbertype('f')">f</button></div>
+            <div class="button-"><button class="keyboard" onclick="numbertype('g')">g</button></div>
+            <div class="button-"><button class="keyboard" onclick="numbertype('h')">h</button></div>
+            <div class="button-"><button class="keyboard" onclick="numbertype('j')">j</button></div>
+            <div class="button-"><button class="keyboard" onclick="numbertype('k')">k</button></div>
+            <div class="button-"><button class="keyboard" onclick="numbertype('k')">l</button></div>
+            <div class="button-"><button class="keyboard" style="color: cornflowerblue;" onclick="numbertype(';')">;</button>
+            </div>
+            <div class="button-"><button class="keyboard" style="color: cornflowerblue;" onclick="numbertype()">'</button>
+            </div>
+            <div class="button-"><button class="keyboard" style="width:130px;color: greenyellow;"
+                    onclick="numbertype()">Enter</button></div>
+
+        </div>
+        <div class="first-row">
+
+            <div class="button-"><button class="keyboard" style="width: 120px;color: greenyellow;"
+                    onclick="numbertype()">shift</button></div>
+            &emsp;&emsp;&ensp;&emsp;
+            &emsp;&emsp;&ensp;&emsp;
+            &emsp;
+            <div class="button-"><button class="keyboard" onclick="numbertype('z')">z</button></div>
+            <div class="button-"><button class="keyboard" onclick="numbertype('x')">x</button></div>
+            <div class="button-"><button class="keyboard" onclick="numbertype('c')">c</button></div>
+            <div class="button-"><button class="keyboard" onclick="numbertype('v')">v</button></div>
+            <div class="button-"><button class="keyboard" onclick="numbertype('b')">b</button></div>
+            <div class="button-"><button class="keyboard" onclick="numbertype('n')">n</button></div>
+            <div class="button-"><button class="keyboard" onclick="numbertype('m')">m</button></div>
+            <div class="button-"><button class="keyboard" style="color: cornflowerblue;" onclick="numbertype(',')">,</button>
+            </div>
+            <div class="button-"><button class="keyboard" style="color: cornflowerblue;" onclick="numbertype('.')">.</button>
+            </div>
+            <div class="button-"><button class="keyboard" style="color: cornflowerblue;" onclick="numbertype('?')">?</button>
+            </div>
+            <div class="button-"><button class="keyboard" style="width: 150px;color: greenyellow;"
+                    onclick="typing()">shift</button></div>
+
+        </div>
+
+        <div class="button-"><button class="keyboard" style="color: yellowgreen;" onclick="numbertype()">ctrl</button></div>
+        <div class="button-"><button class="keyboard" style="color: yellowgreen;" onclick="numbertype()">cmd</button></div>
+        <div class="button-"><button class="keyboard" style="color: yellowgreen;" onclick="numbertype()">alt</button></div>
+        <button style="height: 40px;width: 580px;border-radius: 10px;color:aqua; background-color:yellowgreen;"
+            onclick="numbertype(' ')">space</button>
+        <div class="button-"><button class="keyboard" style="color: yellowgreen;" onclick="numbertype()">alt</button></div>
+        <div class="button-"><button class="keyboard" style="color: yellowgreen;" onclick="numbertype()">cmd</button></div>
+        <div class="button-"><button class="keyboard" style="color: yellowgreen;" onclick="numbertype()">ctrl</button></div>
+    </main>
+
+</body>
+
+</html>
